@@ -1,0 +1,6 @@
+%ul
+  - treasures.each do |t|
+    %li
+      #{t.name}, #{t.warehouse.name}, #{t.status.name}, #{t.description}
+      = link_to t('remove'), treasure_path(t), method: :delete, data: { confirm: t('remove_confirmation') }
+      = link_to t('edit'), edit_treasure_path(t)

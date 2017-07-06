@@ -1,0 +1,6 @@
+= simple_form_for treasure do |f|
+  = f.input :name
+  = f.association :warehouse
+  = f.association :status
+  = f.input :description, as: :text
+  = f.submit
