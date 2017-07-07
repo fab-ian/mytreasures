@@ -26,6 +26,6 @@ class TreasuresController < ApplicationController
   private
 
   def treasure_params
-    params.require(:treasure).permit(:name, :description, :warehouse_id, :status_id)
+    params.require(:treasure).permit(:name, :description, :warehouse_id, :status_id, :photo)
   end
 end

@@ -36,6 +36,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'decent_exposure'
 gem 'devise'
 gem 'haml-rails'
+gem 'jquery-rails'
+gem 'paperclip'
 gem 'simple_form'
 gem 'twitter-bootstrap-rails'
 
