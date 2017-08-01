@@ -12,6 +12,5 @@
 //
 //= require jquery
 //= require rails-ujs
-//= require twitter/bootstrap/collapse
 //= require turbolinks
 //= require_tree .
