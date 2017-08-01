@@ -42,7 +42,15 @@ gem 'simple_form'
 gem 'twitter-bootstrap-rails'
 
 group :development, :test do
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-passenger'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano-scm-gitcopy'
+
   gem 'pry-byebug'
+
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
