@@ -49,7 +49,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
   gem 'capistrano-scm-gitcopy'
-  gem 'capistrano-sidekiq' #, git: 'https://github.com/seuros/capistrano-sidekiq.git'
+  gem 'capistrano-sidekiq'
 
   gem 'pry-byebug'
 
