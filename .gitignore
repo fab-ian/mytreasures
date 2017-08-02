@@ -20,3 +20,8 @@
 
 /config/database.yml
 /public/system/*
+
+/config/deploy.rb
+/config/deploy/*
+
+/public/assets/*
