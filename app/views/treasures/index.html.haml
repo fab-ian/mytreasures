@@ -1,6 +1,7 @@
-%ul
-  - treasures.each do |t|
-    %li
-      #{ image_tag t.photo.url(:thumb) }, #{t.name}, #{t.warehouse.name}, #{t.status.name}, #{t.description}
-      = link_to t('remove'), treasure_path(t), method: :delete, data: { confirm: t('remove_confirmation') }
-      = link_to t('edit'), edit_treasure_path(t)
+%div
+- treasures.each do |t|
+  .col-md-3.thumbnail
+    = image_tag t.photo.url(:thumb)
+    %span #{t.name}, #{t.warehouse.name}, #{t.status.name}, #{t.description}
+    = link_to t('remove'), treasure_path(t), method: :delete, data: { confirm: t('remove_confirmation') }
+    = link_to t('edit'), edit_treasure_path(t)
