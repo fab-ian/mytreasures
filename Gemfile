@@ -40,6 +40,8 @@ gem 'draper'
 gem 'font-awesome-rails'
 gem 'icheck-rails'
 
+gem 'sidekiq'
+
 group :development, :test do
   gem 'capistrano'
   gem 'capistrano-bundler'
@@ -47,6 +49,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
   gem 'capistrano-scm-gitcopy'
+  gem 'capistrano-sidekiq' #, git: 'https://github.com/seuros/capistrano-sidekiq.git'
 
   gem 'pry-byebug'
 
