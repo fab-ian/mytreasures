@@ -11,6 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require rails-ujs
+//= require jquery_ujs
+//= require bootstrap-sprockets
+//= require adminlte/app.min.js
+//= require 'icheck'
 //= require turbolinks
 //= require_tree .

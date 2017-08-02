@@ -7,6 +7,7 @@
     %title= content_for?(:title) ? yield(:title) : "My treasures"
     = csrf_meta_tags
     = stylesheet_link_tag "application", :media => "all"
+
     = favicon_link_tag 'calculator/apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
     = favicon_link_tag 'calculator/apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
     = favicon_link_tag 'calculator/apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
@@ -15,24 +16,7 @@
     = javascript_include_tag "application"
     / Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
-      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
+      / = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
 
-
-  %body.sidebar-collapse.skin-blue-light{'data-spy': 'scroll', 'data-target': '#scrollspy'}
-    .wrapper
-      = render 'layouts/header'
-      .sidebar-wrapper
-        = render 'layouts/sidebar_left'
-
-      .content-wrapper
-        .container
-          .row
-            .col-lg-9
-              %p.notice= notice
-              %p.alert= alert
-
-              = yield
-            .col-lg-3
-              = render 'layouts/sidebar'
-          %footer
-            %p &copy; Naibaf 2017
+  %body.hold-transition.login-page
+    = yield
