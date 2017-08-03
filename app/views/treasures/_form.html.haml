@@ -1,7 +1,7 @@
 = simple_form_for treasure do |f|
   = f.input :photo, as: :file
   = f.input :name
-  = f.association :warehouse
-  = f.association :status
+  = f.association :warehouse, collection: Warehouse.order(:name)
+  = f.association :status, collection: Status.order(:name), selected: 1
   = f.input :description, as: :text
   = f.submit
