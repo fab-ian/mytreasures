@@ -33,6 +33,7 @@ gem 'devise'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'paperclip'
+gem 'delayed_paperclip'
 gem 'simple_form'
 
 gem 'bootstrap-sass', '~> 3.3.6'

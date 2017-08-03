@@ -10,5 +10,7 @@ class Treasure < ApplicationRecord
     default_url: '/images/:style/missing.png'
   )
 
+  process_in_background :photo
+
   validates_attachment_content_type :photo, content_type: %r{\Aimage\/.*\z}
 end
