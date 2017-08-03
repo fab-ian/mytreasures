@@ -28,8 +28,10 @@
         .container
           .row
             .col-lg-12
-              %p.notice= notice
-              %p.alert= alert
+              - if notice
+                .alert.alert-info= notice
+              - if alert
+                .alert.alert-warn= alert
 
               = yield
           %footer
