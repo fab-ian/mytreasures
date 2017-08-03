@@ -12,7 +12,7 @@ class TreasuresController < ApplicationController
 
   def update
     if treasure.update(treasure_params)
-      redirect_to treasures_path
+      redirect_to treasure_path(treasure), notice: 'The treasure has been updated successfully.'
     else
       render :edit
     end

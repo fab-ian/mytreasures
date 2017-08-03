@@ -1,0 +1,11 @@
+%h1 Warehouses #{ link_to 'add', new_warehouse_path, class: 'btn btn-primary' }
+
+%table.table
+  - warehouses.each do |w|
+    %tr
+      %td= w.name
+      %td= simple_format(w.description)
+      %td
+        = link_to 'edit', edit_warehouse_path(w)
+        = link_to 'delete', warehouse_path(w), method: :delete, data: { confirm: 'Are you sure?' }
+
