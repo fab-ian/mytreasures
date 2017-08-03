@@ -4,7 +4,7 @@ class TreasuresController < ApplicationController
 
   def create
     if treasure.save
-      redirect_to new_treasure_path, notice: 'The photo has been saved successfully!'
+      redirect_to new_treasure_path, notice: 'The treasure has been saved successfully! Add next one.'
     else
       render :new
     end

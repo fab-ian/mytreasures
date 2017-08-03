@@ -1,4 +1,4 @@
 %div
 - treasures.each do |t|
   .col-md-2.col-sm-2.col-xs-3.thumbnail
-    = link_to (image_tag t.photo.url(:medium)), edit_treasure_path(t)
+    = link_to (image_tag t.photo.url(:medium)), treasure_path(t)
