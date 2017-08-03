@@ -1,5 +1,5 @@
 class TreasuresController < ApplicationController
-  expose :treasures, -> { Treasure.includes(:warehouse, :status).all }
+  expose :treasures, -> { Treasure.includes(:warehouse, :status).order(created_at: :desc) }
   expose :treasure
 
   def create
