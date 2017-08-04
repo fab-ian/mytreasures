@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :treasures
+  resources :treasures do
+    get 'page/:page', action: :index, on: :collection
+  end
+
   resources :warehouses
 
   authenticate :user do
