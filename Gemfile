@@ -42,6 +42,7 @@ gem 'draper'
 gem 'font-awesome-rails'
 gem 'icheck-rails'
 
+gem 'paper_trail'
 gem 'sidekiq'
 
 group :development, :test do
