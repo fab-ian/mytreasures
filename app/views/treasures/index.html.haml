@@ -1,4 +1,15 @@
-%div
-- treasures.each do |t|
-  .col-md-2.col-sm-2.col-xs-3.thumbnail
-    = link_to (image_tag t.photo.url(:medium)), treasure_path(t)
+/ Search Form (Optional)
+.row
+  %form.sidebar-form{:method => "get"}
+    .input-group
+      %input.form-control{:name => "q", :placeholder => "Search...", :type => "text", value: params[:q] }/
+      %span.input-group-btn
+        %button#search-btn.btn.btn-flat{:type => "submit"}
+          %i.fa.fa-search
+
+.row
+  - treasures.each do |t|
+    .col-md-2.col-sm-2.col-xs-3.thumbnail
+      = link_to (image_tag t.photo.url(:medium)), treasure_path(t)
+
+= paginate treasures
