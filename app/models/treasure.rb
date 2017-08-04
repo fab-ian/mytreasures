@@ -14,6 +14,8 @@ class Treasure < ApplicationRecord
 
   validates_attachment_content_type :photo, content_type: %r{\Aimage\/.*\z}
 
+  has_paper_trail
+
   def self.filtered_records(q)
     if q.present?
       Treasure.includes(:warehouse, :status).where('name ILIKE ? OR description ILIKE ?', "%#{q}%", "%#{q}%")
