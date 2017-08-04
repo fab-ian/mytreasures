@@ -1,8 +1,9 @@
 %h1= treasure.name
-= image_tag treasure.photo.url, class: 'img-responsive'
 %p= treasure.warehouse.name
 %p= treasure.status.name
 %p= simple_format(treasure.description)
 
 = link_to 'edit', edit_treasure_path(treasure)
 = link_to 'remove', treasure_path(treasure), method: :delete, data: { confirm: 'Are you sure?' }
+
+= image_tag treasure.photo.url, class: 'img-responsive'
