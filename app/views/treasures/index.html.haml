@@ -1,3 +1,12 @@
+/ Search Form (Optional)
+.row
+  %form.sidebar-form{:method => "get"}
+    .input-group
+      %input.form-control{:name => "q", :placeholder => "Search...", :type => "text", value: params[:q] }/
+      %span.input-group-btn
+        %button#search-btn.btn.btn-flat{:type => "submit"}
+          %i.fa.fa-search
+
 .row
   - treasures.each do |t|
     .col-md-2.col-sm-2.col-xs-3.thumbnail

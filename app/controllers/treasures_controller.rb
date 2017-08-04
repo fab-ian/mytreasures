@@ -1,5 +1,5 @@
 class TreasuresController < ApplicationController
-  expose :treasures, -> { Treasure.includes(:warehouse, :status).order(created_at: :desc).page params[:page] }
+  expose :treasures, -> { Treasure.filtered_records(params[:q]).order(created_at: :desc).page params[:page] }
   expose :treasure
 
   def create
