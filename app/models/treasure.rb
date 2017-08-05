@@ -18,7 +18,9 @@ class Treasure < ApplicationRecord
 
   def self.filtered_records(q)
     if q.present?
-      Treasure.includes(:warehouse, :status).where('name ILIKE ? OR description ILIKE ?', "%#{q}%", "%#{q}%")
+      Treasure
+        .includes(:warehouse, :status)
+        .where('name ILIKE ? OR description ILIKE ?', "%#{q}%", "%#{q}%")
     else
       Treasure.includes(:warehouse, :status).all
     end

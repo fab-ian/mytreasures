@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   end
 
   resources :warehouses
+  resources :paper_trail_messages, only: :index do
+    get 'page/:page', action: :index, on: :collection
+  end
 
   authenticate :user do
     mount Sidekiq::Web => '/sidekiq'

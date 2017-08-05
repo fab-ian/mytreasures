@@ -1,0 +1,23 @@
+.box
+  .box-header
+    %h3.box-title Messages
+
+  .box-body.table-responsive.no-padding
+    %table.table.table-hover
+      %tr
+        %th Date
+        %th Model
+        %th Name
+        %th Event
+        %th User
+
+      - paper_trail_messages.each do |ptm|
+        %tr
+          %td= formated_date(ptm.created_at)
+          %td= ptm.item_type
+          %td= resource_name(ptm.item_type, ptm.item_id)
+          %td
+            %span.label{class: event_class_label(ptm.event)}= ptm.event
+          %td= ptm.whodunnit
+
+= paginate paper_trail_messages
