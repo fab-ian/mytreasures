@@ -1,10 +1,16 @@
 class TreasuresController < ApplicationController
-  expose :treasures, -> { Treasure.filtered_records(params[:q]).order(created_at: :desc).page params[:page] }
+  expose(
+    :treasures,
+    -> { Treasure.filtered_records(params[:q]).order(created_at: :desc).page params[:page] }
+  )
   expose :treasure
 
   def create
     if treasure.save
-      redirect_to new_treasure_path, notice: 'The treasure has been saved successfully! Add next one.'
+      redirect_to(
+        new_treasure_path,
+        notice: 'The treasure has been saved successfully! Add next one.'
+      )
     else
       render :new
     end
