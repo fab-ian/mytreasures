@@ -1,0 +1,23 @@
+%li.dropdown.messages-menu
+  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+    %i.fa.fa-building-o
+    %span.label.label-success #{@treasure_count}
+
+  %ul.dropdown-menu
+    %li.header Last added
+    %li
+      %ul.menu
+        - @menu_treasures.each do |mt|
+          %li
+            %a{href: treasure_path(mt)}
+              .pull-left
+                %img{:alt => "User Image", :src => mt.photo.url(:thumb)}/
+              %h4
+                = mt.decorate.name
+                %small
+                  %i.fa.fa-clock-o
+                  = time_ago_in_words(mt.created_at)
+              %p= mt.decorate.description
+
+    %li.footer
+      %a{href: treasures_path} See All Messages

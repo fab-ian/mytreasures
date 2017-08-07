@@ -12,33 +12,9 @@
         %ul.nav.navbar-nav
           %li
             = link_to 'Add', new_treasure_path
-          / Messages: style can be found in dropdown.less
-          %li.dropdown.messages-menu
-            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-              %i.fa.fa-envelope-o
-              %span.label.label-success 4
-            %ul.dropdown-menu
-              %li.header You have 4 messages
-              %li
-                / inner menu: contains the actual data
-                %ul.menu
-                  %li
-                    / start message
-                    %a{:href => "#"}
-                      .pull-left
-                        / <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                        \&gt;
-                      %h4
-                        Sender Name
-                        %small
-                          %i.fa.fa-clock-o
-                          5 mins
-                      %p Message Excerpt
-                  / end message
-                  \...
-              %li.footer
-                %a{:href => "#"} See All Messages
-          / Notifications: style can be found in dropdown.less
+
+          = render 'layouts/menu_treasures'
+
           %li.dropdown.notifications-menu
             %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
               %i.fa.fa-bell-o
