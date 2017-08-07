@@ -4,9 +4,14 @@ class Treasure < ApplicationRecord
 
   validates :name, presence: true
 
+  after_create :set_treasures_count
+  after_destroy :set_treasures_count
+
+  scope :menu, -> { order(created_at: :desc).first(10) }
+
   has_attached_file(
     :photo,
-    styles: { medium: '300x300#', thumb: '100x100#' },
+    styles: { medium: '300x300#', thumb: '40x40#' },
     default_url: '/images/:style/missing.png'
   )
 
@@ -24,5 +29,10 @@ class Treasure < ApplicationRecord
     else
       Treasure.includes(:warehouse, :status).all
     end
+  end
+
+  def set_treasures_count
+    Rails.cache.write('treasure_count', Treasure.count)
+    Rails.cache.write('menu_treasures', Treasure.menu)
   end
 end
