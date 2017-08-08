@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users, except: %i(edit update show)
   devise_for :users
 
   resources :treasures do
