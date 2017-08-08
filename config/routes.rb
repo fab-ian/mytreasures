@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :users, except: %i(edit update show)
+  scope '/admin' do
+    resources :users, except: %i(edit update show)
+  end
+
   devise_for :users
 
   resources :treasures do
