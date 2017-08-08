@@ -18,5 +18,11 @@ module Mytreasures
 
     config.i18n.default_locale = :pl
     config.time_zone = 'Warsaw'
+
+    config.generators do |generate|
+      generate.helper false
+      generate.stylesheets = false
+      generate.javascripts = false
+    end
   end
 end
