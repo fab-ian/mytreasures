@@ -1,0 +1,10 @@
+%h1 Users #{ link_to 'add', new_user_path, class: 'btn btn-primary' }
+
+%table.table
+  - users.each do |u|
+    %tr
+      %td= u.id
+      %td= u.name
+      %td= u.email
+      %td
+        = link_to 'delete', user_path(u), method: :delete, data: { confirm: 'Are you sure?' }
