@@ -58,14 +58,14 @@
           - if user_signed_in?
             %li.dropdown.user.user-menu
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                / = image_tag(current_user.decorate.image, class: 'user-image', alt: 'User Image')
-                %span.hidden-xs= current_user.email
+                = image_tag(current_user.avatar, class: 'user-image', alt: 'User Image')
+                %span.hidden-xs= current_user.name
               %ul.dropdown-menu
                 / User image
                 %li.user-header
-                  / = image_tag(current_user.decorate.image, class: 'img-circle', alt: 'User Image')
+                  = image_tag(current_user.avatar, class: 'img-circle', alt: 'User Image')
                   %p
-                    #{current_user.email} - Web Developer
+                    #{current_user.name} - Web Developer
                     %small Member since Nov. 2012
                 / Menu Body
                 %li.user-body

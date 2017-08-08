@@ -1,22 +1,16 @@
 .main-sidebar
-  / Inner sidebar
   .sidebar
-    / user panel (Optional)
     - if user_signed_in?
       .user-panel
         .pull-left.image
-          / = image_tag(current_user.decorate.image, class: 'img-circle', alt: 'User Image')
+          = image_tag(current_user.avatar, class: 'img-circle', alt: 'User Image')
         .pull-left.info
-          %p #{current_user.email}
+          %p #{current_user.name}
           %a{:href => "#"}
             %i.fa.fa-circle.text-success
             Online
-      / /.user-panel
-    / /.sidebar-form
-    / Sidebar Menu
     %ul.sidebar-menu
       %li.header HEADER
-      / Optionally, you can add icons to the links
       %li.active
         = link_to 'Warehouses', warehouses_path
       %li.active
@@ -30,6 +24,3 @@
             %a{:href => "#"} Link in level 2
           %li
             %a{:href => "#"} Link in level 2
-    / /.sidebar-menu
-  / /.sidebar
-/ /.main-sidebar
