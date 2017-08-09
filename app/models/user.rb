@@ -13,4 +13,6 @@ class User < ApplicationRecord
   )
 
   validates_attachment_content_type :avatar, content_type: %r(\Aimage\/.*\z)
+
+  has_paper_trail
 end
