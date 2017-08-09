@@ -18,6 +18,6 @@
           %td= resource_name(ptm.item_type, ptm.item_id)
           %td
             %span.label{class: event_class_label(ptm.event)}= ptm.event
-          %td= ptm.whodunnit
+          %td= User.find(ptm.whodunnit).name
 
 = paginate paper_trail_messages
