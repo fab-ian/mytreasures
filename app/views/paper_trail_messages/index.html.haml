@@ -5,19 +5,19 @@
   .box-body.table-responsive.no-padding
     %table.table.table-hover
       %tr
-        %th Date
-        %th Model
         %th Name
+        %th Model
         %th Event
         %th User
+        %th Date
 
       - paper_trail_messages.each do |ptm|
         %tr
-          %td= formated_date(ptm.created_at)
-          %td= ptm.item_type
           %td= resource_name(ptm.item_type, ptm.item_id)
+          %td= ptm.item_type
           %td
             %span.label{class: event_class_label(ptm.event)}= ptm.event
           %td= User.find(ptm.whodunnit).name
+          %td= formated_date(ptm.created_at)
 
 = paginate paper_trail_messages
