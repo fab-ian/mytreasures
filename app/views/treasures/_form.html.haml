@@ -1,7 +1,17 @@
-= simple_form_for treasure do |f|
-  = f.input :photo, as: :file
-  = f.input :name
-  = f.association :warehouse, collection: Warehouse.order(:name)
-  = f.association :status, collection: Status.order(:name), selected: 1
-  = f.input :description, as: :text
-  = f.submit
+.box.box-primary
+  .box-header.with-border
+    %h3.box-title #{title}
+
+  = simple_form_for treasure do |f|
+    .box-body
+      = f.input :photo, as: :file
+      = f.input :name
+      = f.association :warehouse, collection: Warehouse.order(:name)
+      = f.association :status, collection: Status.order(:name), selected: 1
+      = f.input :description, as: :text
+
+      - if treasure.persisted?
+        = image_tag treasure.photo.url, class: 'img-responsive'
+
+    .box-footer
+      = f.submit class: 'btn btn-primary'
