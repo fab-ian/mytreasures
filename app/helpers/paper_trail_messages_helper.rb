@@ -14,7 +14,11 @@ module PaperTrailMessagesHelper
     end
   end
 
-  def resource_name(model, item_id)
-    model.constantize.exists?(item_id) ? model.constantize.find(item_id).name : '----'
+  def resource_name(ptm) # ptm - PaperTrailMessage
+    if ptm.item_type.constantize.exists?(ptm.item_id)
+      ptm.item_type.constantize.find(ptm.item_id).name
+    else
+      PaperTrail::Version.where(item_id: ptm.item_id).last.reify.name
+    end
   end
 end

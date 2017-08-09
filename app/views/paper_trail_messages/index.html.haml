@@ -13,7 +13,7 @@
 
       - paper_trail_messages.each do |ptm|
         %tr
-          %td= resource_name(ptm.item_type, ptm.item_id)
+          %td= resource_name(ptm)
           %td= ptm.item_type
           %td
             %span.label{class: event_class_label(ptm.event)}= ptm.event
