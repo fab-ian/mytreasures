@@ -1,11 +1,19 @@
-%h1 Warehouses #{ link_to 'add', new_warehouse_path, class: 'btn btn-primary' }
+.box
+  .box-header
+    %h3.box-title Warehouses #{ link_to 'add', new_warehouse_path, class: 'btn btn-default btn-xs btn-flat' }
 
-%table.table
-  - warehouses.each do |w|
-    %tr
-      %td= w.name
-      %td= simple_format(w.description)
-      %td
-        = link_to 'edit', edit_warehouse_path(w)
-        = link_to 'delete', warehouse_path(w), method: :delete, data: { confirm: 'Are you sure?' }
+  .box-body.table-responsive.no-padding
+    %table.table.table-hover
+      %tr
+        %th Name
+        %th Description
+        %th Function
 
+      - warehouses.each do |w|
+        %tr
+          %td= w.name
+          %td= simple_format(w.description)
+          %td
+            = link_to 'edit', edit_warehouse_path(w)
+            %span &nbsp;|&nbsp;
+            = link_to 'delete', warehouse_path(w), method: :delete, data: { confirm: 'Are you sure?' }
