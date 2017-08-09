@@ -1,10 +1,17 @@
-%h1 Users #{ link_to 'add', new_user_path, class: 'btn btn-primary' }
+.box
+  .box-header
+    %h3.box-title Users #{ link_to 'add', new_user_path, class: 'btn btn-default btn-xs btn-flat' }
 
-%table.table
-  - users.each do |u|
-    %tr
-      %td= u.id
-      %td= u.name
-      %td= u.email
-      %td
-        = link_to 'delete', user_path(u), method: :delete, data: { confirm: 'Are you sure?' }
+  .box-body.table-responsive.no-padding
+    %table.table.table-hover
+      %tr
+        %th Name
+        %th E-mail
+        %th Function
+
+      - users.each do |u|
+        %tr
+          %td= u.name
+          %td= u.email
+          %td
+            = link_to 'delete', user_path(u), method: :delete, data: { confirm: 'Are you sure?' }
