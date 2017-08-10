@@ -44,6 +44,7 @@ gem 'icheck-rails'
 
 gem 'paper_trail'
 gem 'sidekiq'
+gem 'cancancan'
 
 group :development, :test do
   gem 'capistrano'

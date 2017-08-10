@@ -1,4 +1,6 @@
 class TreasuresController < ApplicationController
+  authorize_resource
+
   expose(
     :treasures,
     -> { Treasure.filtered_records(params[:q]).order(created_at: :desc).page params[:page] }

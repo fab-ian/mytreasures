@@ -1,12 +1,20 @@
 .box.box-primary
   .box-header.with-border
-    %h3.box-title New
+    %h3.box-title #{title}
 
   = simple_form_for user do |f|
     .box-body
       = f.input :name
       = f.input :avatar, as: :file
-      = f.input :password, as: :password
+      - unless user.persisted?
+        = f.input :password, as: :password
       = f.input :email, as: :email
+
+      - for role in User::ROLES
+        = check_box_tag "user[roles][#{role}]", role, user.roles.include?(role), {:name => "user[roles][]"}
+        = label_tag "user_roles_#{role}", role.to_s.humanize
+        %br/
+      = hidden_field_tag "user[roles][]", ""
+
     .box-footer
       = f.submit class: 'btn btn-primary'

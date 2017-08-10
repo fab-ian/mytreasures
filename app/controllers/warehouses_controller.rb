@@ -1,4 +1,6 @@
 class WarehousesController < ApplicationController
+  authorize_resource
+
   expose :warehouses, -> { Warehouse.order(created_at: :desc) }
   expose :warehouse
 
