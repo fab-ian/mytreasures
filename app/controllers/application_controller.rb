@@ -5,6 +5,13 @@ class ApplicationController < ActionController::Base
   before_action :set_treasures_info
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  rescue_from CanCan::AccessDenied do |exception|
+    respond_to do |format|
+      format.json { head :forbidden }
+      format.html { redirect_to main_app.root_url, alert: exception.message }
+    end
+  end
+
   def set_treasures_info
     Rails.cache.write('treasure_count', Treasure.count) if Rails.cache.fetch('treasure_count').nil?
     @treasure_count = Rails.cache.fetch('treasure_count')

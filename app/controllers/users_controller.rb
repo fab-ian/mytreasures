@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  authorize_resource
+
   expose :users, -> { User.order(created_at: :desc) }
   expose :user
 
@@ -21,6 +23,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :avatar, :password, :email)
+    params.require(:user).permit(:name, :avatar, :password, :email, roles: [])
   end
 end
