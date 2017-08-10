@@ -4,17 +4,17 @@ class UsersController < ApplicationController
 
   def create
     if user.save
-      redirect_to users_path, notice: 'User has been successfully created.'
+      redirect_to users_path, notice: 'User has been created successfully.'
     else
       render :new
     end
   end
 
-  def destroy
-    if user.destroy
-      redirect_to users_path, notice: 'User has been successfully removed.'
+  def update
+    if user.update(user_params)
+      redirect_to users_path, notice: 'User has been updated successfully'
     else
-      redirect_to users_path, notice: 'User hasn\'t been removed!'
+      render :edit
     end
   end
 

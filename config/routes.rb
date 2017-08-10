@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   scope '/admin' do
-    resources :users, except: %i(edit update show)
+    resources :users, except: %i(destroy show)
   end
 
   devise_for :users

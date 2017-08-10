@@ -14,4 +14,4 @@
           %td= u.name
           %td= u.email
           %td
-            = link_to 'delete', user_path(u), method: :delete, data: { confirm: 'Are you sure?' }
+            = link_to 'edit', edit_user_path(u)
