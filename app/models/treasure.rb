@@ -8,6 +8,37 @@ class Treasure < ApplicationRecord
   after_destroy :set_treasures_count
 
   scope :menu, -> { order(created_at: :desc).first(10) }
+  scope :get_last_warehouse, lambda { |user_id|
+    # Check if current user has added at least once Treasure record.
+    present =
+      PaperTrail::Version
+      .where(whodunnit: user_id, item_type: 'Treasure', event: 'create')
+      .present?
+
+    if present
+
+      pt_rec =
+        PaperTrail::Version
+        .where(whodunnit: user_id, item_type: 'Treasure', event: 'create')
+        .last
+
+      pt_rec_count =
+        PaperTrail::Version
+        .where(whodunnit: user_id, item_type: 'Treasure', item_id: pt_rec.item_id)
+        .count
+
+      # if record was only 'created' not updated or destroyed
+      if pt_rec_count == 1
+        Treasure.find(pt_rec.item_id).warehouse_id
+      else
+        PaperTrail::Version
+          .where(whodunnit: user_id, item_type: 'Treasure', item_id: pt_rec.item_id)
+          .last.reify.warehouse_id
+      end
+    else
+      Warehouse.first.id
+    end
+  }
 
   has_attached_file(
     :photo,

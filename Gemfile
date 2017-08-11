@@ -42,9 +42,11 @@ gem 'draper'
 gem 'font-awesome-rails'
 gem 'icheck-rails'
 
+gem 'cancancan'
 gem 'paper_trail'
 gem 'sidekiq'
-gem 'cancancan'
+
+gem 'awesome_print'
 
 group :development, :test do
   gem 'capistrano'
