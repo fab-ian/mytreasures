@@ -51,6 +51,7 @@ GEM
     ast (2.3.0)
     autoprefixer-rails (7.1.2.3)
       execjs
+    awesome_print (1.8.0)
     bcrypt (3.1.11)
     bcrypt (3.1.11-java)
     bcrypt (3.1.11-x64-mingw32)
@@ -363,6 +364,7 @@ PLATFORMS
   x86-mswin32
 
 DEPENDENCIES
+  awesome_print
   bootstrap-sass (~> 3.3.6)
   cancancan
   capistrano
