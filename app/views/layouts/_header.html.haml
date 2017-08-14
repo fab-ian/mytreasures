@@ -65,16 +65,8 @@
                 %li.user-header
                   = image_tag(current_user.avatar, class: 'img-circle', alt: 'User Image')
                   %p
-                    #{current_user.name} - Web Developer
-                    %small Member since Nov. 2012
-                / Menu Body
-                %li.user-body
-                  .col-xs-4.text-center
-                    %a{:href => "#"} Followers
-                  .col-xs-4.text-center
-                    %a{:href => "#"} Sales
-                  .col-xs-4.text-center
-                    %a{:href => "#"} Friends
+                    #{current_user.name}
+                    %small= current_user.decorate.member_since
                 / Menu Footer
                 %li.user-footer
                   .pull-left
