@@ -47,6 +47,7 @@ gem 'paper_trail'
 gem 'sidekiq'
 
 gem 'awesome_print'
+gem 'rollbar'
 
 group :development, :test do
   gem 'capistrano'

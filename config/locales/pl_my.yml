@@ -1,0 +1,4 @@
+pl:
+  time:
+    formats:
+      month_and_year: '%B %Y'

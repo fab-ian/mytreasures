@@ -2,3 +2,7 @@ en:
   remove: 'Remove'
   edit: 'Edit'
   remove_confirmation: 'Are you sure to delete this treasure?'
+
+  time:
+    formats:
+      month_and_year: '%B %Y'
