@@ -1,6 +1,5 @@
 class Treasure < ApplicationRecord
   belongs_to :warehouse
-  belongs_to :status
 
   validates :name, presence: true
 
@@ -55,10 +54,10 @@ class Treasure < ApplicationRecord
   def self.filtered_records(q)
     if q.present?
       Treasure
-        .includes(:warehouse, :status)
+        .includes(:warehouse)
         .where('name ILIKE ? OR description ILIKE ?', "%#{q}%", "%#{q}%")
     else
-      Treasure.includes(:warehouse, :status).all
+      Treasure.includes(:warehouse).all
     end
   end
 
