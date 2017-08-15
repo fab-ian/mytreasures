@@ -1,8 +1,32 @@
-%h1= treasure.name
-%p= treasure.warehouse.name
-%p= simple_format(treasure.description)
+%section.invoice{style: 'margin: 0px'}
+  .row
+    .col-xs-12
+      %h2.page-header
+        %i.fa.fa-info-circle
+        = treasure.name
+  .row.invoice-info
+    .col-sm-5.invoice-col
+      Warehouse
+      %p
+        %strong= treasure.warehouse.name
+      %p
+        %small= "Added #{treasure.decorate.created_at}"
 
-= link_to 'edit', edit_treasure_path(treasure)
-= link_to 'remove', treasure_path(treasure), method: :delete, data: { confirm: 'Are you sure?' }
+    - if treasure.description.present?
+      .col-sm-7.invoice-col
+        Description
+        %div.text-muted.well.well-sm.no-shadow{style:'margin-top: 10px;'}
+          = simple_format(treasure.description)
 
-= image_tag treasure.photo.url, class: 'img-responsive'
+  .row.no-print
+    .col-xs-12
+      %a.btn.btn-danger.pull-right{href: treasure_path(treasure), data: {confirm: 'Are you sure?', method: :delete}}
+        %i.fa.fa-remove
+        Remove
+
+      %a.btn.btn-warning.pull-right{href: edit_treasure_path(treasure), style: 'margin-right: 5px;'}
+        %i.fa.fa-edit
+        Edit
+
+
+  %p{style: 'margin-top: 10px'}= image_tag treasure.photo.url, class: 'img-responsive'
