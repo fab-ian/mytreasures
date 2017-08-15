@@ -15,7 +15,6 @@ class Treasure < ApplicationRecord
       .present?
 
     if present
-
       pt_rec =
         PaperTrail::Version
         .where(whodunnit: user_id, item_type: 'Treasure', event: 'create')
@@ -43,7 +42,7 @@ class Treasure < ApplicationRecord
     :photo,
     styles: { medium: '300x300#', thumb: '40x40#' },
     default_url: '/images/:style/missing.png',
-    only_process: [:thumb, :original]
+    only_process: %i(thumb original)
   )
 
   process_in_background :photo, only_process: [:medium]
