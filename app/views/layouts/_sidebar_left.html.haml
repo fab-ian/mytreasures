@@ -1,19 +1,11 @@
 .main-sidebar
   .sidebar
-    - if user_signed_in?
-      .user-panel
-        .pull-left.image
-          = image_tag(current_user.avatar, class: 'img-circle', alt: 'User Image')
-        .pull-left.info
-          %p #{current_user.name}
-          %a{:href => "#"}
-            %i.fa.fa-circle.text-success
-            Online
     %ul.sidebar-menu
-      %li.header HEADER
-      %li.active
-        = link_to 'Users', users_path
+      %li.header Resources
       %li.active
         = link_to 'Warehouses', warehouses_path
+      %li.active
+        = link_to 'Users', users_path
+      %li.header Info
       %li.active
         = link_to 'Messages', paper_trail_messages_path
