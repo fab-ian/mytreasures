@@ -49,12 +49,17 @@ GEM
       sshkit (>= 1.6.1, != 1.7.0)
     arel (8.0.0)
     ast (2.3.0)
+    autoprefixer-rails (7.1.2.6)
+      execjs
     awesome_print (1.8.0)
     bcrypt (3.1.11)
     bcrypt (3.1.11-java)
     bcrypt (3.1.11-x64-mingw32)
     bcrypt (3.1.11-x86-mingw32)
     bindex (0.5.0)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.0.6)
     cancancan (2.0.0)
@@ -126,6 +131,8 @@ GEM
     ffi (1.9.18-java)
     ffi (1.9.18-x64-mingw32)
     ffi (1.9.18-x86-mingw32)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     haml (5.0.2)
@@ -360,6 +367,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  bootstrap-sass (~> 3.3.6)
   cancancan
   capistrano
   capistrano-bundler
@@ -374,6 +382,7 @@ DEPENDENCIES
   delayed_paperclip
   devise
   draper
+  font-awesome-rails
   haml-rails
   icheck-rails
   jbuilder (~> 2.5)
