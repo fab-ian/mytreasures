@@ -19,5 +19,5 @@
 /public/assets/*
 .env
 
-/config/deploy
+/config/deploy.rb
 /config/deploy/*
