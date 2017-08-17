@@ -49,6 +49,8 @@ gem 'sidekiq'
 gem 'awesome_print'
 gem 'rollbar'
 
+gem 'dotenv-rails'
+
 group :development, :test do
   gem 'capistrano'
   gem 'capistrano-bundler'
