@@ -20,7 +20,7 @@ test:
 
 production:
   <<: *default
-  username: ENV['MT_PG_USER_NAME']
-  password: ENV['MT_PG_PASSWORD']
+  username: <%= ENV['MT_PG_USER_NAME'] %>
+  password: <%= ENV['MT_PG_PASSWORD'] %>
   host: localhost
   database: mytreasures
