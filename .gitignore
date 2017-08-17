@@ -12,16 +12,9 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
 /node_modules
 /yarn-error.log
-
 .byebug_history
-
-/config/database.yml
 /public/system/*
-
-/config/deploy.rb
-/config/deploy/*
-
 /public/assets/*
+.env
