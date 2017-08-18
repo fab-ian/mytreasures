@@ -1,3 +1,7 @@
+Treasure.destroy_all
+Warehouse.destroy_all
+PaperTrail::Version.destroy_all
+
 User.create(name: 'Admin', email: 'admin@naibaf.pl', password: 'adminadmin2017', roles_mask: 1)
 
 Warehouse.create(
