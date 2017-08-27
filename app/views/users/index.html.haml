@@ -7,11 +7,13 @@
       %tr
         %th Name
         %th E-mail
+        %th Language
         %th Function
 
       - users.each do |u|
         %tr
           %td= u.name
           %td= u.email
+          %td= u.locale
           %td
             = link_to 'edit', edit_user_path(u)

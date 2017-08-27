@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :name, presence: true
+  validates :locale, presence: true
 
   has_attached_file(
     :avatar,

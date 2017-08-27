@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :set_paper_trail_whodunnit
   before_action :set_treasures_info
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_locale
 
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
@@ -23,10 +24,14 @@ class ApplicationController < ActionController::Base
     @menu_treasures = Rails.cache.fetch('menu_treasures')
   end
 
+  def set_locale
+    I18n.locale = current_user.locale || I18n.default_locale
+  end
+
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i(name avatar))
-    devise_parameter_sanitizer.permit(:account_update, keys: %i(name avatar))
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i(name avatar locale))
+    devise_parameter_sanitizer.permit(:account_update, keys: %i(name avatar locale))
   end
 end
