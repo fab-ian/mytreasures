@@ -23,6 +23,10 @@
         %p.help-block
           Currently waiting confirmation for: #{resource.unconfirmed_email}
       .form-group
+        = f.label :locale
+        = f.select :locale, %w(en pl), class: 'form-control'
+
+      .form-group
         = f.label :password
         %i (leave blank if you don't want to change it)
         = f.password_field :password, autocomplete: "off", class: 'form-control'

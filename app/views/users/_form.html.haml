@@ -16,5 +16,6 @@
         %br/
       = hidden_field_tag "user[roles][]", ""
 
+      = f.input :locale, as: :select, collection: %w(en pl)
     .box-footer
       = f.submit class: 'btn btn-primary'
