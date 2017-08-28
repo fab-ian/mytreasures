@@ -1,15 +1,15 @@
 .box
   .box-header
-    %h3.box-title Messages
+    %h3.box-title= I18n.t('messages.messages')
 
   .box-body.table-responsive.no-padding
     %table.table.table-hover
       %tr
-        %th Name
-        %th Model
-        %th Event
-        %th User
-        %th Date
+        %th= I18n.t('messages.name')
+        %th= I18n.t('messages.model')
+        %th= I18n.t('messages.event')
+        %th= I18n.t('messages.user')
+        %th= I18n.t('messages.date')
 
       - paper_trail_messages.each do |ptm|
         %tr

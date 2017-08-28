@@ -11,7 +11,7 @@ class TreasuresController < ApplicationController
     if treasure.save
       redirect_to(
         new_treasure_path,
-        notice: 'The treasure has been saved successfully! Add next one.'
+        notice: I18n.t('treasure_notice.add')
       )
     else
       render :new
@@ -20,7 +20,7 @@ class TreasuresController < ApplicationController
 
   def update
     if treasure.update(treasure_params)
-      redirect_to treasure_path(treasure), notice: 'The treasure has been updated successfully.'
+      redirect_to treasure_path(treasure), notice: I18n.t('treasure_notice.update')
     else
       render :edit
     end

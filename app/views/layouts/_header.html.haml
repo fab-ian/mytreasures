@@ -2,7 +2,7 @@
   %header.main-header
     %a.logo{:href => root_path}
       / LOGO
-      My Treasures
+      = I18n.t('my_treasures')
     / Header Navbar: style can be found in header.less
     %nav.navbar.navbar-static-top{:role => "navigation"}
       %a.sidebar-toggle{"data-toggle" => "offcanvas", :href => "#", :role => "button"}
@@ -11,7 +11,7 @@
       .navbar-custom-menu
         %ul.nav.navbar-nav
           %li
-            = link_to 'Add treasure', new_treasure_path
+            = link_to I18n.t('add_treasure'), new_treasure_path
 
           = render 'layouts/menu_treasures'
 
@@ -31,6 +31,6 @@
                 / Menu Footer
                 %li.user-footer
                   .pull-left
-                    = link_to 'Profile', edit_user_registration_path, class: 'btn btn-default btn-flat'
+                    = link_to I18n.t('profile'), edit_user_registration_path, class: 'btn btn-default btn-flat'
                   .pull-right
-                    = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-default btn-flat'
+                    = link_to I18n.t('sign_out'), destroy_user_session_path, method: :delete, class: 'btn btn-default btn-flat'

@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def create
     if user.save
-      redirect_to users_path, notice: 'User has been created successfully.'
+      redirect_to users_path, notice: I18n.t('user_notice.add')
     else
       render :new
     end
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def update
     if user.update(user_params)
-      redirect_to users_path, notice: 'User has been updated successfully'
+      redirect_to users_path, notice: I18n.t('user_notice.update')
     else
       render :edit
     end

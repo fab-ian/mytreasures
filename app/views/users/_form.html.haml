@@ -10,11 +10,15 @@
         = f.input :password, as: :password
       = f.input :email, as: :email
 
-      - for role in User::ROLES
-        = check_box_tag "user[roles][#{role}]", role, user.roles.include?(role), {:name => "user[roles][]"}
-        = label_tag "user_roles_#{role}", role.to_s.humanize
-        %br/
+      = f.label :roles_mask
+
+      %div.text-muted.well.well-sm.no-shadow{style:'margin-top: 5px;'}
+        - for role in User::ROLES
+          = check_box_tag "user[roles][#{role}]", role, user.roles.include?(role), {:name => "user[roles][]"}
+          = label_tag "user_roles_#{role}", role.to_s.humanize
+          %br
       = hidden_field_tag "user[roles][]", ""
+
 
       = f.input :locale, as: :select, collection: %w(en pl)
     .box-footer

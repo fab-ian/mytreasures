@@ -1,13 +1,13 @@
 .box
   .box-header
-    %h3.box-title Users #{ link_to 'add', new_user_path, class: 'btn btn-default btn-xs btn-flat' }
+    %h3.box-title #{User.model_name.human(count: users.count)} #{ link_to I18n.t('add'), new_user_path, class: 'btn btn-default btn-xs btn-flat' }
 
   .box-body.table-responsive.no-padding
     %table.table.table-hover
       %tr
-        %th Name
-        %th E-mail
-        %th Language
+        %th= User.human_attribute_name(:name)
+        %th= User.human_attribute_name(:email)
+        %th= User.human_attribute_name(:locale)
         %th Function
 
       - users.each do |u|
@@ -16,4 +16,4 @@
           %td= u.email
           %td= u.locale
           %td
-            = link_to 'edit', edit_user_path(u)
+            = link_to I18n.t('edit'), edit_user_path(u)

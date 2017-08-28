@@ -1,11 +1,11 @@
 .main-sidebar
   .sidebar
     %ul.sidebar-menu
-      %li.header Resources
+      %li.header= I18n.t('resources')
       %li.active
-        = link_to 'Warehouses', warehouses_path
+        = link_to Warehouse.model_name.human(count: 2) , warehouses_path
       %li.active
-        = link_to 'Users', users_path
-      %li.header Info
+        = link_to User.model_name.human(count: 2) , users_path
+      %li.header= I18n.t('info')
       %li.active
-        = link_to 'Messages', paper_trail_messages_path
+        = link_to I18n.t('messages.messages'), paper_trail_messages_path

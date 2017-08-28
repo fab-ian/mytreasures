@@ -6,7 +6,7 @@ class WarehousesController < ApplicationController
 
   def create
     if warehouse.save
-      redirect_to warehouses_path, notice: 'Warehouse has been added successfully.'
+      redirect_to warehouses_path, notice: I18n.t('warehouse_notice.add')
     else
       render :new
     end
@@ -14,7 +14,7 @@ class WarehousesController < ApplicationController
 
   def update
     if warehouse.update(warehouse_params)
-      redirect_to warehouses_path, notice: 'Warehouse has been modified successfully'
+      redirect_to warehouses_path, notice: I18n.t('warehouse_notice.update')
     else
       render :edit
     end
@@ -22,7 +22,7 @@ class WarehousesController < ApplicationController
 
   def destroy
     if warehouse.destroy
-      redirect_to warehouses_path, notice: 'Warehouse has been deleted successfully.'
+      redirect_to warehouses_path, notice: I18n.t('warehouse_notice.remove')
     end
   end
 

@@ -28,25 +28,24 @@
 
       .form-group
         = f.label :password
-        %i (leave blank if you don't want to change it)
+        %i #{I18n.t('user_notice.leave_blank')}
         = f.password_field :password, autocomplete: "off", class: 'form-control'
         - if @minimum_password_length
           %p.help-block
-            = @minimum_password_length
-            characters minimum
+            = I18n.t('user_notice.characters', number: @minimum_password_length)
       .form-group
         = f.label :password_confirmation
         = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
       .form-group
         = f.label :current_password
-        %i (we need your current password to confirm your changes)
+        %i= I18n.t('user_notice.confirm_changes')
         = f.password_field :current_password, autocomplete: "off", class: 'form-control'
 
     .box-footer
-      %button.btn.btn-primary{type: "submit"} Update
+      %button.btn.btn-primary{type: "submit"} #{I18n.t('update')}
 
 
-%h3 Cancel my account
+%h3= I18n.t('cancel_account')
 %p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-default'}
-= link_to "Back", :back
+  #{I18n.t('unhappy')} #{button_to I18n.t('cancel_account'), registration_path(resource_name), data: { confirm: I18n.t('are_you_sure') }, method: :delete, class: 'btn btn-default'}
+= link_to I18n.t('back'), :back

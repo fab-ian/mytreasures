@@ -4,7 +4,7 @@
     %span.label.label-success #{@treasure_count}
 
   %ul.dropdown-menu
-    %li.header Last added
+    %li.header= I18n.t('last_added')
     %li
       %ul.menu
         - @menu_treasures.each do |mt|
@@ -20,4 +20,4 @@
               %p= mt.decorate.description
 
     %li.footer
-      %a{href: treasures_path} See All Messages
+      = link_to I18n.t('show_all_treasures'), treasures_path

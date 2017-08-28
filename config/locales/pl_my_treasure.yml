@@ -1,0 +1,78 @@
+pl:
+  time:
+    formats:
+      month_and_year: '%B %Y'
+      dmy: '%d/%m/%Y'
+
+  activerecord:
+    models:
+      treasure:
+        one: 'Skarb'
+        other: 'Skarby'
+      warehouse:
+        one: 'Magazyn'
+        other: 'Magazyny'
+      user:
+        one: 'Użytkownik'
+        other: 'Użytkownicy'
+    attributes:
+      treasure:
+        photo: 'Zdjęcie'
+        name: 'Nazwa'
+        warehouse: 'Magazyn'
+        description: 'Opis'
+      warehouse:
+        name: 'Nazwa'
+        description: 'Opis'
+      user:
+        name: 'Osoba'
+        avatar: 'Avatar'
+        password: 'Hasło'
+        password_confirmation: 'Potwierdź hasło'
+        current_password: 'Aktualne hasło'
+        email: 'E-mail'
+        locale: 'Język'
+        roles_mask: 'Uprawnienia'
+
+  add:    'Dodaj'
+  edit:   'Edytuj'
+  delete: 'Usuń'
+  function: 'Funkcje'
+  are_you_sure: 'Jesteś pewny?'
+  resources: 'Zasoby'
+  info: 'Informacje'
+  messages:
+    messages: 'Komunikaty'
+    name: 'Nazwa'
+    model: 'Tabela'
+    event: 'Zdarzenie'
+    user: 'Użytkownik'
+    date: 'Data'
+  my_treasures: 'Moje skarby'
+  add_treasure: 'Dodaj skarb'
+  search: 'Szukaj...'
+  added: 'Dodano'
+  last_added: 'Ostatnio dodane'
+  show_all_treasures: 'Pokaż wszystkie skarby'
+  no_description: '(brak opisu)'
+  profile: 'Profil'
+  sign_out: 'Wyloguj'
+  update: 'Aktualizuj'
+  cancel_account: 'Usuń konto'
+  unhappy: 'Niezadowolony ?'
+  back: 'Powrót'
+  member_since: 'Członek od'
+
+  treasure_notice:
+    add: 'Skarb został dodany! Wprowadź następny.'
+    update: 'Skarb został pomyślnie zaktualizowany.'
+  warehouse_notice:
+    add: 'Magazyn został dodany!'
+    update: 'Magazyn został pomyślnie zaktualizowany.'
+    remove: 'Magazyn został usunięty.'
+  user_notice:
+    add: 'Użytkownik został dodany!'
+    update: 'Użytkownik został pomyślnie zaktualizowany.'
+    leave_blank: '(Pozostaw puste, jeżeli nie chcesz zmieniać)'
+    characters: "minimum %{number} znaków"
+    confirm_changes: '(aby zaakceptować zmiany należy wprowadzić bieżące hasło)'
