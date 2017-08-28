@@ -1,5 +1,0 @@
-pl:
-  time:
-    formats:
-      month_and_year: '%B %Y'
-      dmy: '%d/%m/%Y'

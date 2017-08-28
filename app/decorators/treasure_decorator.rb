@@ -2,7 +2,11 @@ class TreasureDecorator < Draper::Decorator
   delegate_all
 
   def description
-    object.description.present? ? h.truncate(object.description, length: 42) : '(no description)'
+    if object.description.present?
+      h.truncate(object.description, length: 42)
+    else
+      I18n.t('no_description')
+    end
   end
 
   def name

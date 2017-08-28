@@ -7,3 +7,46 @@ en:
     formats:
       month_and_year: '%B %Y'
       dmy: '%d/%m/%Y'
+
+  add:    'Add'
+  edit:   'Edit'
+  delete: 'Remove'
+  function: 'Function'
+  are_you_sure: 'Are you sure?'
+  resources: 'Resources'
+  info: 'Information'
+  messages:
+    messages: 'Messages'
+    name: 'Name'
+    model: 'Tabela'
+    event: 'Event'
+    user: 'User'
+    date: 'Date'
+  my_treasures: 'My treasures'
+  add_treasure: 'Add treasure'
+  search: 'Search...'
+  added: 'Added'
+  last_added: 'last added'
+  show_all_treasures: 'Show all treasures'
+  no_description: '(no description)'
+  profile: 'Profile'
+  sign_out: 'Sign out'
+  update: 'Update'
+  cancel_account: 'Cancel my account'
+  unhappy: 'Unhappy?'
+  back: 'Back'
+  member_since: 'Member since'
+
+  treasure_notice:
+    add: 'Treasure has been saved successfully! Add next one.'
+    update: 'Treasure has been updated successfully.'
+  warehouse_notice:
+    add: 'Warehouse has been added successfully!'
+    update: 'Warehouse has been updated successfully'
+    remove: 'Warehouse has been removed successfully.'
+  user_notice:
+    add: 'User has been added successfully!'
+    update: 'User has been updated successfully'
+    leave_blank: "(leave blank if you don't want to change it)"
+    characters: "%{number} characters minimum"
+    confirm_changes: '(we need your current password to confirm your changes)'

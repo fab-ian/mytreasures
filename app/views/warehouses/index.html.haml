@@ -1,19 +1,19 @@
 .box
   .box-header
-    %h3.box-title Warehouses #{ link_to 'add', new_warehouse_path, class: 'btn btn-default btn-xs btn-flat' }
+    %h3.box-title #{Warehouse.model_name.human(count: warehouses.count)} #{ link_to I18n.t('add'), new_warehouse_path, class: 'btn btn-default btn-xs btn-flat' }
 
   .box-body.table-responsive.no-padding
     %table.table.table-hover
       %tr
-        %th Name
-        %th Description
-        %th Function
+        %th= Warehouse.human_attribute_name(:name)
+        %th= Warehouse.human_attribute_name(:description)
+        %th= I18n.t('function')
 
       - warehouses.each do |w|
         %tr
           %td= w.name
           %td= simple_format(w.description)
           %td
-            = link_to 'edit', edit_warehouse_path(w)
+            = link_to I18n.t('edit'), edit_warehouse_path(w)
             %span &nbsp;|&nbsp;
-            = link_to 'delete', warehouse_path(w), method: :delete, data: { confirm: 'Are you sure?' }
+            = link_to I18n.t('delete'), warehouse_path(w), method: :delete, data: { confirm: I18n.t('are_you_sure') }
