@@ -8,5 +8,6 @@ FactoryGirl.define do
     password '123456'
     email { generate :email }
     locale 'pl'
+    roles_mask 1
   end
 end
