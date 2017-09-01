@@ -7,13 +7,14 @@
       %tr
         %th= Warehouse.human_attribute_name(:name)
         %th= Warehouse.human_attribute_name(:description)
-        %th= I18n.t('function')
+        %th
+        %th
 
       - warehouses.each do |w|
         %tr
           %td= w.name
           %td= simple_format(w.description)
           %td
-            = link_to I18n.t('edit'), edit_warehouse_path(w)
-            %span &nbsp;|&nbsp;
-            = link_to I18n.t('delete'), warehouse_path(w), method: :delete, data: { confirm: I18n.t('are_you_sure') }
+            = link_to '', edit_warehouse_path(w), class: 'glyphicon glyphicon-pencil index-icons'
+          %td
+            = link_to '', warehouse_path(w), method: :delete, class: 'glyphicon glyphicon-trash index-icons', data: { confirm: I18n.t('are_you_sure') }

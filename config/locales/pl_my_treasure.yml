@@ -37,7 +37,6 @@ pl:
   add:    'Dodaj'
   edit:   'Edytuj'
   delete: 'Usuń'
-  function: 'Funkcje'
   are_you_sure: 'Jesteś pewny?'
   resources: 'Zasoby'
   info: 'Informacje'
