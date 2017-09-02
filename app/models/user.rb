@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :locale, presence: true
+  validates :roles_mask, numericality: { greater_than: 0 }
 
   has_attached_file(
     :avatar,
