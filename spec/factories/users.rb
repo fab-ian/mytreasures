@@ -4,7 +4,7 @@ FactoryGirl.define do
   end
 
   factory :user do
-    name 'Igor Wspaniały'
+    name 'Igor Wspaniały - admin'
     password '123456'
     email { generate :email }
     locale 'pl'
