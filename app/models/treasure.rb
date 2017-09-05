@@ -40,12 +40,12 @@ class Treasure < ApplicationRecord
 
   has_attached_file(
     :photo,
-    styles: { medium: '300x300#', thumb: '40x40#' },
+    styles: { medium: '300x300#', thumb: '40x40#', large: '1200x1200>' },
     default_url: '/images/:style/missing.png',
     only_process: %i(thumb original)
   )
 
-  process_in_background :photo, only_process: [:medium]
+  process_in_background :photo, only_process: %i[medium large]
 
   validates_attachment_content_type :photo, content_type: %r{\Aimage\/.*\z}
 
