@@ -10,7 +10,7 @@
       = f.input :description, as: :text
 
       - if treasure.persisted?
-        = image_tag treasure.photo.url, class: 'img-responsive'
+        = link_to (image_tag treasure.photo.url(:large), class: 'img-responsive'), treasure.photo.url
 
     .box-footer
       = f.submit class: 'btn btn-primary'
