@@ -1,7 +1,33 @@
 en:
-  remove: 'Remove'
-  edit: 'Edit'
-  remove_confirmation: 'Are you sure to delete this treasure?'
+  activerecord:
+    models:
+      treasure:
+        one: 'Treasure'
+        other: 'Treasures'
+      warehouse:
+        one: 'Warehouse'
+        other: 'Warehouses'
+      user:
+        one: 'User'
+        other: 'Users'
+    attributes:
+      treasure:
+        photo: 'Photo'
+        name: 'Name'
+        warehouse: 'Warehouse'
+        description: 'Description'
+      warehouse:
+        name: 'Name'
+        description: 'Description'
+      user:
+        name: 'Person'
+        avatar: 'Avatar'
+        password: 'Password'
+        password_confirmation: 'Password confirmation'
+        current_password: 'Current password'
+        email: 'E-mail'
+        locale: 'Language'
+        roles_mask: 'Permissions'
 
   time:
     formats:
@@ -11,6 +37,8 @@ en:
   add:    'Add'
   edit:   'Edit'
   delete: 'Remove'
+  remove: 'Remove'
+  remove_confirmation: 'Are you sure to delete this treasure?'
   are_you_sure: 'Are you sure?'
   resources: 'Resources'
   info: 'Information'

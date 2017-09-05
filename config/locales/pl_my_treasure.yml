@@ -1,9 +1,4 @@
 pl:
-  time:
-    formats:
-      month_and_year: '%B %Y'
-      dmy: '%d/%m/%Y'
-
   activerecord:
     models:
       treasure:
@@ -34,6 +29,11 @@ pl:
         locale: 'Język'
         roles_mask: 'Uprawnienia'
 
+  time:
+    formats:
+      month_and_year: '%B %Y'
+      dmy: '%d/%m/%Y'
+
   add:    'Dodaj'
   edit:   'Edytuj'
   delete: 'Usuń'
@@ -58,7 +58,7 @@ pl:
   sign_out: 'Wyloguj'
   update: 'Aktualizuj'
   cancel_account: 'Usuń konto'
-  unhappy: 'Niezadowolony ?'
+  unhappy: 'Niezadowolony?'
   back: 'Powrót'
   member_since: 'Członek od'
 
