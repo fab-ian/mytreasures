@@ -29,4 +29,5 @@
         = I18n.t('edit')
 
 
-  %p{style: 'margin-top: 10px'}= image_tag treasure.photo.url, class: 'img-responsive'
+  %p{style: 'margin-top: 10px'}
+    = link_to (image_tag treasure.photo.url(:large), class: 'img-responsive'), treasure.photo.url
