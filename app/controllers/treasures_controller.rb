@@ -8,6 +8,8 @@ class TreasuresController < ApplicationController
   expose :treasure
 
   def create
+    treasure.user_id = current_user.id
+
     if treasure.save
       redirect_to(
         new_treasure_path,
