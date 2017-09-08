@@ -7,7 +7,7 @@ describe 'navigate' do
       login_as(user)
 
       visit treasures_path
-      expect(page.current_path).to eq('/treasures')
+      expect(page.current_path).to eq(treasures_path)
     end
   end
 end
