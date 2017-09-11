@@ -30,7 +30,7 @@ class TreasuresController < ApplicationController
 
   def destroy
     treasure.destroy
-    redirect_to treasures_path
+    redirect_to treasures_path, notice: I18n.t('treasure_notice.remove')
   end
 
   private

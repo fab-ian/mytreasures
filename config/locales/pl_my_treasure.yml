@@ -65,6 +65,7 @@ pl:
   treasure_notice:
     add: 'Skarb został dodany! Wprowadź następny.'
     update: 'Skarb został pomyślnie zaktualizowany.'
+    remove: 'Skarb został usunięty.'
   warehouse_notice:
     add: 'Magazyn został dodany!'
     update: 'Magazyn został pomyślnie zaktualizowany.'

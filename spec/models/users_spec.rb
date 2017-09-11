@@ -9,29 +9,9 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe 'Validation' do
-    it 'cannot be created without a name' do
-      user.name = nil
-      user.valid?
-      expect(user.errors[:name].size).to eq(1)
-    end
-
-    it 'cannot be created without an email' do
-      user.email = nil
-      user.valid?
-      expect(user.errors[:email].size).to eq(1)
-    end
-
-    it 'cannot be created without a locale' do
-      user.locale = nil
-      user.valid?
-      expect(user.errors[:locale].size).to eq(1)
-    end
-
-    it 'cannot be created without assigment to at least one role' do
-      user.roles_mask = 0
-      user.valid?
-      expect(user.errors[:roles_mask].size).to eq(1)
-    end
-  end
+  it { should have_many(:treasures) }
+  it { should validate_presence_of(:name) }
+  it { should validate_presence_of(:email) }
+  it { should validate_presence_of(:locale) }
+  it { should validate_numericality_of(:roles_mask).is_greater_than(0) }
 end

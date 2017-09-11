@@ -20,11 +20,11 @@
 
   .row.no-print
     .col-xs-12
-      %a.btn.btn-danger.pull-right{href: treasure_path(treasure), data: {confirm: I18n.t('are_you_sure'), method: :delete}}
+      %a.btn.btn-danger.pull-right{ href: treasure_path(treasure), id: "delete_#{treasure.id}", data: { confirm: I18n.t('are_you_sure'), method: :delete }}
         %i.fa.fa-remove
         = I18n.t('delete')
 
-      %a.btn.btn-warning.pull-right{href: edit_treasure_path(treasure), style: 'margin-right: 5px;'}
+      %a.btn.btn-warning.pull-right{href: edit_treasure_path(treasure), style: 'margin-right: 5px;', id: "edit_#{treasure.id}"}
         %i.fa.fa-edit
         = I18n.t('edit')
 

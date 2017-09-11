@@ -9,11 +9,7 @@ RSpec.describe Treasure, type: :model do
     end
   end
 
-  describe 'Validation' do
-    it 'cannot be created without a name' do
-      treasure.name = nil
-      treasure.valid?
-      expect(treasure.errors[:name].size).to eq(1)
-    end
-  end
+  it { should belong_to(:warehouse) }
+  it { should belong_to(:user) }
+  it { should validate_presence_of(:name) }
 end
