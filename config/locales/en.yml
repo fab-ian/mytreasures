@@ -67,6 +67,7 @@ en:
   treasure_notice:
     add: 'Treasure has been saved successfully! Add next one.'
     update: 'Treasure has been updated successfully.'
+    remove: 'Treasure has been removed successfully.'
   warehouse_notice:
     add: 'Warehouse has been added successfully!'
     update: 'Warehouse has been updated successfully'
