@@ -9,11 +9,6 @@ RSpec.describe Warehouse, type: :model do
     end
   end
 
-  describe 'Validation' do
-    it 'cannot be created without a name' do
-      warehouse.name = nil
-      warehouse.valid?
-      expect(warehouse.errors[:name].size).to eq(1)
-    end
-  end
+  it { should have_many(:treasures) }
+  it { should validate_presence_of(:name) }
 end
