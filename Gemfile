@@ -5,51 +5,33 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 
-gem 'pg'
-
-# Use Puma as the app server
-gem 'puma', '~> 3.7'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use CoffeeScript for .coffee assets and views
+gem 'awesome_print'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'cancancan'
 gem 'coffee-rails', '~> 4.2'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
 gem 'decent_exposure'
 gem 'delayed_paperclip'
 gem 'devise'
-gem 'haml-rails'
-gem 'jquery-rails'
-gem 'kaminari'
-gem 'paperclip'
-gem 'simple_form'
-
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'dotenv-rails'
 gem 'draper'
 gem 'font-awesome-rails'
+gem 'haml-rails'
 gem 'icheck-rails'
-
-gem 'cancancan'
+gem 'jbuilder', '~> 2.5'
+gem 'jquery-rails'
+gem 'kaminari'
 gem 'paper_trail'
-gem 'sidekiq'
-
-gem 'awesome_print'
+gem 'paperclip'
+gem 'pg'
+gem 'puma', '~> 3.7'
 gem 'rollbar'
-
-gem 'dotenv-rails'
+gem 'sass-rails', '~> 5.0'
+gem 'sidekiq'
+gem 'simple_form'
+gem 'turbolinks', '~> 5'
+gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'capistrano'
@@ -72,7 +54,6 @@ end
 
 group :test do
   gem(
-    # 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
     'shoulda-matchers'
   )
 end
